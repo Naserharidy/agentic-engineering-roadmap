@@ -1,0 +1,35 @@
+name: Start roadmap
+
+on:
+  workflow_dispatch:
+    inputs:
+      field:
+        description: Your field. It picks your Phase 4 project.
+        type: choice
+        options: [SaaS, Mobile, CMS]
+      start_phase:
+        description: Where to start. Choose 0 if you are new to coding agents; it adds the optional foundations.
+        type: choice
+        options: ['1', '0']
+        default: '1'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  start:
+    # Runs only in your copy, never in the template itself.
+    if: ${{ !github.event.repository.is_template }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Create issues and milestones
+        run: node .github/scripts/start-roadmap.mjs --field "$FIELD" --start-phase "$START_PHASE"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          FIELD: ${{ inputs.field }}
+          START_PHASE: ${{ inputs.start_phase }}

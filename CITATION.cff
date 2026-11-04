@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: If you use or adapt this roadmap, please credit it as below.
+title: Agentic Engineering Roadmap
+authors:
+  - family-names: Haridy
+    given-names: Abdelrahman
+version: 1.0.0
+license: CC-BY-NC-SA-4.0
+repository-code: https://github.com/ab-haridy/agentic-engineering-roadmap
