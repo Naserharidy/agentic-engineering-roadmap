@@ -27,11 +27,11 @@ using HTML, CSS, and JavaScript.
 I tested the webpage in the browser.
 
 ### Verification Results
-- [ ] Page loads correctly
-- [ ] Button works
-- [ ] Desktop layout works
-- [ ] Mobile layout works
-- [ ] No obvious console errors
+- [x] Page loads correctly
+- [x] Button works
+- [x] Desktop layout works
+- [x] Mobile layout works
+- [x] No obvious console errors
 
 ## 6. Iterate
 I reviewed the results and requested
