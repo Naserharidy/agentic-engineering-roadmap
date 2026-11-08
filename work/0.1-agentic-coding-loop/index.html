@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agentic Loop Demo</title>
+  <title>Agentic Loop Demo — Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="card">
     <h1>Agentic Loop Demo</h1>
-    <p>A small responsive webpage that shows a message when you click the button.</p>
-    <button type="button" id="demoBtn">Show Message</button>
-    <p id="message" class="message hidden">
-      The agentic loop is working: click → action → feedback.
-    </p>
+    <p>Sign in with a valid email address.</p>
+    <form id="loginForm" novalidate>
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+      <span id="emailError" class="error-text" role="alert"></span>
+      <button type="submit" id="submitBtn">Sign in</button>
+    </form>
+    <p id="successMessage" class="success hidden"></p>
   </main>
+  <script src="email-validation.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

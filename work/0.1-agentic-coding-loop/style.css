@@ -8,6 +8,8 @@
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --accent: #e5e7eb;
+  --error: #ef4444;
+  --success: #16a34a;
 }
 
 * {
@@ -80,6 +82,15 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: #9ca3af;
+}
+
 .message {
   margin-top: 1.25rem;
   font-size: 0.95rem;
@@ -88,6 +99,63 @@ button:focus-visible {
 }
 
 .message.hidden {
+  display: none;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="email"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input[type="email"].error {
+  border-color: var(--error);
+}
+
+input[type="email"].error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-text {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--error);
+  min-height: 1.25rem;
+}
+
+.success {
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--success);
+  min-height: 1.5rem;
+}
+
+.success.hidden {
   display: none;
 }
 
